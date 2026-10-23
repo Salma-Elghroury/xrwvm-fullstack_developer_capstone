@@ -1,69 +1,117 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <link rel="stylesheet" href="/static/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About Us | Best Cars</title>
   <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+
+<body>
+
+  <nav class="navbar navbar-expand-lg site-nav">
     <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <h2 class="brand">Best <span>Cars</span></h2>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
+            <a class="nav-link active" aria-current="page" href="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
+            <a class="nav-link" href="/contact">Contact Us</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <h1>About Us</h1> Welcome to Best Cars dealership, home to the best cars in North America. We deal in selling domestic and imported cars at reasonable prices.
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlY21S904GGA-brW7REz4l5iyt0HHnQTkLJZ1EN_5tRg&s=10" alt="Card image">
-        <div class="card-body">
-          <p class="title">Oscar Wilde</p>
-          <p>CEO</p>
-          <p class="card-text">This is the CEO.</p>
-          <p>oscar.wilde@gmail.com</p>
+
+  <section class="hero"
+    style="background-image: linear-gradient(rgba(16,20,24,0.78), rgba(16,20,24,0.78)), url('/static/car_dealership.jpg');">
+    <div>
+      <h1>About Best Cars</h1>
+      <p class="lead">Home to the finest domestic and imported vehicles in North America — where quality meets a price
+        you'll love.</p>
+    </div>
+  </section>
+
+  <h2 class="section-title">Our Story</h2>
+  <div class="gold-line"></div>
+  <div class="about-block">
+    Founded in 1998, Best Cars has grown from a single showroom in Chicago into one of North America's most trusted
+    dealership networks. For over two decades, our promise has stayed the same: every vehicle we sell is rigorously
+    inspected, honestly priced, and backed by a team that treats customers like neighbors, not numbers.
+  </div>
+  <div class="about-block">
+    Today we carry more than 40 premium brands — from rugged American trucks to refined European sedans and cutting-edge
+    electric vehicles. Whether you're buying your first car or your fifth, our specialists guide you through trade-ins,
+    financing, and after-sales care with zero pressure and full transparency.
+  </div>
+
+  <h2 class="section-title">Leadership Team</h2>
+  <div class="gold-line"></div>
+  <p class="section-sub">Meet the people who drive our vision forward</p>
+
+  <div class="container mb-5">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="team-card">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&h=800&auto=format&fit=crop&crop=faces"
+            alt="Oscar Wilde, CEO">
+          <div class="card-body">
+            <p class="title">Oscar Wilde</p>
+            <p class="role">Chief Executive Officer</p>
+            <p class="card-text">With 25 years in the automotive industry, Oscar built Best Cars from a one-lot
+              operation into a nationwide dealership network. He champions honest pricing and a customer-first culture
+              across every showroom.</p>
+            <p class="email">&#9993; oscar.wilde@bestcars.com</p>
+          </div>
         </div>
       </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSouVnpuka7bSoN6VvhA6PmyJwnJr3PRmmEc1OPRZi9Yw&s=10" alt="Card image">
-        <div class="card-body">
-          <p class="title">Chase James</p>
-          <p>CTO</p>
-          <p class="card-text">This is the CTO.</p>
-          <p>chase.james@gmail.com</p>
+      <div class="col-md-4 mb-4">
+        <div class="team-card">
+          <img src="https://images.stockcake.com/public/8/c/7/8c7bbf32-a413-4de3-afb8-9bc8dffba093/confident-business-professional-stockcake.jpg"
+            alt="Chase James, CTO">
+          <div class="card-body">
+            <p class="title">Chase James</p>
+            <p class="role">Chief Technology Officer</p>
+            <p class="card-text">Chase leads the digital experience that powers our dealerships — from online inventory
+              browsing to virtual test drives. A former automotive software engineer, he's obsessed with making car
+              buying as smooth as the ride itself.</p>
+            <p class="email">&#9993; chase.james@bestcars.com</p>
+          </div>
         </div>
       </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="https://img.magnific.com/free-photo/portrait-happy-woman-with-digital-tablet_329181-11681.jpg?semt=ais_hybrid&w=740&q=80" alt="Card image">
-        <div class="card-body">
-          <p class="title">Brittany Richards</p>
-          <p>CFO</p>
-          <p class="card-text">This is the CFO.</p>
-          <p>brit.rich@gmail.com</p>
+      <div class="col-md-4 mb-4">
+        <div class="team-card">
+          <img src="https://img.magnific.com/free-photo/confident-cheerful-young-businesswoman_1262-20881.jpg?semt=ais_hybrid&w=740&q=80"
+            alt="Brittany Richards, CFO">
+          <div class="card-body">
+            <p class="title">Brittany Richards</p>
+            <p class="role">Chief Financial Officer</p>
+            <p class="card-text">Brittany oversees the financial strategy behind Best Cars' growth, negotiating the
+              competitive financing and lease options our customers rely on. She believes a great deal is one where both
+              sides walk away smiling.</p>
+            <p class="email">&#9993; brit.richards@bestcars.com</p>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    </div>
-    
-</div>
+  </div>
+
+</body>
 
 </html>
