@@ -1,15 +1,31 @@
-.navcontainer{
+/* Login page — matches the Best Cars dark charcoal + gold theme */
+:root {
+  --dark: #101418;
+  --dark-2: #1a1f26;
+  --gold: #d4a437;
+  --gold-soft: #e8c76a;
+  --text: #e9e6df;
+  --muted: #9aa3ad;
+}
+
+.login_page {
+  background: var(--dark);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+.navcontainer {
   display: flex;
   flex: 1;
-
   flex-direction: row;
   margin: auto;
   margin-top: 2%;
-  background-color: rgb(97, 64, 128);
+  background-color: var(--dark-2);
   align-items: flex-start;
 }
 
-.navitems{
+.navitems {
   display: flex;
   flex-direction: row;
   padding: 20px;
@@ -18,11 +34,15 @@
   justify-self: center;
 }
 
-.nav_item{
-  margin-left:15px;
+.nav_item {
+  margin-left: 15px;
   font-size: 20px;
-  color: azure;
+  color: var(--text);
   align-self: center;
+}
+
+.nav_item:hover {
+  color: var(--gold);
 }
 
 .input_panel {
@@ -34,53 +54,108 @@
   justify-self: center;
 }
 
-.input_field{
-  height:40px;
-  width:200px; 
+.input_field {
+  height: 42px;
+  width: 220px;
   font-size: medium;
-  margin:.5cm;
+  margin: .35cm;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0 0.75rem;
 }
 
+.input_field::placeholder {
+  color: #6b7480;
+}
 
-.action_button{
+.input_field:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(212, 164, 55, 0.2);
+}
+
+.action_button {
   cursor: pointer;
   font-size: large;
-  color: rgb(97, 64, 128);
-  border-radius: 10px;
-  height:40px;
-  padding-left:.5cm;
-  padding-right: .5cm;
+  font-weight: 600;
+  color: #101418;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  height: 42px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin: .35cm;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.action_button:hover {
+  background: var(--gold-soft);
+  transform: translateY(-2px);
+}
+
+.action_button:active {
+  background: #b8892c;
+  transform: translateY(1px) scale(0.97);
+}
+
+.small_header {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--text);
   margin: .5cm;
 }
 
-.submit:hover {
-  background-color: wheat;
-}
-
-.small_header{
-  font: 30px sans-serif;
-  color:azure;
+.username {
+  font-size: 20px;
+  color: var(--gold);
   margin: .5cm;
-}
-
-.username{
-  font: 30px sans-serif;
-  color:azure;
-  margin: .5cm;
-  justify-content: 'flex-end';
-  align-self:flex-end;
+  justify-content: flex-end;
+  align-self: center;
 }
 
 .login_panel {
   display: flex;
   flex-direction: column;
-  margin:auto;
-  margin: 0 auto;
-  width: 50%; 
-  padding: 20px;
-  flex: 1;
-  justify-content:center;
+  margin: 4rem auto;
+  width: 50%;
+  max-width: 460px;
+  padding: 2.5rem 2rem;
+  justify-content: center;
   align-items: center;
-  vertical-align: middle;
-  
+  background: var(--dark-2);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+}
+
+.login_panel .form_title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.login_panel span.input_field {
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 0.35rem;
+}
+
+.login_panel a.loginlink {
+  color: var(--gold-soft);
+  margin-top: 1.25rem;
+  text-decoration: none;
+}
+
+.login_panel a.loginlink:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }

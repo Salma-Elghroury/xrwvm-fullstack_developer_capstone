@@ -1,65 +1,146 @@
-.register_container{
+/* Register page — matches the Best Cars dark charcoal + gold theme */
+:root {
+  --dark: #101418;
+  --dark-2: #1a1f26;
+  --gold: #d4a437;
+  --gold-soft: #e8c76a;
+  --text: #e9e6df;
+  --muted: #9aa3ad;
+}
+
+.register_page {
+  background: var(--dark);
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+}
+
+.register_container {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  margin-top: 2%;
-  background-color: darkturquoise;
+  margin: 3.5rem auto;
+  background: var(--dark-2);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
   min-width: 350px;
-  width: 30%;
+  max-width: 480px;
+  width: 80%;
+  padding: 2.5rem 2rem;
 }
 
-.inputs{
+.register_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.register_header .form_title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.close_link img {
+  width: 26px;
+  filter: invert(1);
+  opacity: 0.75;
+  transition: opacity 0.2s ease;
+}
+
+.close_link:hover img {
+  opacity: 1;
+}
+
+.inputs {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.input{
+.input {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.input_field {
+  height: 42px;
+  width: 240px;
+  margin: 0.3cm;
+  font-size: medium;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 0 0.75rem;
+}
+
+.input_field::placeholder {
+  color: #6b7480;
+}
+
+.input_field:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 0.2rem rgba(212, 164, 55, 0.2);
+}
+
+.submit_panel {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6%;
+  margin-bottom: 4%;
   align-items: center;
 }
 
-.input_field{
-  height:40px;
-  width:200px;
-  margin:.5cm;
-  font-size: medium;
-}
-
-.submit_panel{
-  display: flex;
-  flex-direction:column;
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.submit{
-  margin-left: 30%;
-  margin-right: 30%;
+.submit {
   cursor: pointer;
   font-size: large;
-  color: rgb(97, 64, 128);
-  border-radius: 10px;
-  height:50px;
+  font-weight: 600;
+  color: #101418;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  height: 46px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
 .submit:hover {
-  background-color: wheat;
+  background: var(--gold-soft);
+  transform: translateY(-2px);
 }
 
-.header{
-  font: 4em sans-serif;
-  color: white;
-  margin: .5cm;
+.submit:active {
+  background: #b8892c;
+  transform: translateY(1px) scale(0.97);
 }
 
-.img_icon{
-  width:40px;
-  margin:.1cm;
-  background-color:#0C9;
-  color:#FFF;
-  border-radius:50px;
-  text-align:center;
-  box-shadow: 2px 2px 3px #999;  
+.img_icon {
+  width: 38px;
+  height: 38px;
+  margin: 0.1cm;
+  padding: 4px;
+  object-fit: contain;
+  filter: invert(64%) sepia(72%) saturate(430%) hue-rotate(352deg) brightness(92%) contrast(90%);
+}
+
+.register_container .loginlink {
+  display: block;
+  text-align: center;
+  color: var(--gold-soft);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.register_container .loginlink:hover {
+  color: var(--gold);
+  text-decoration: underline;
 }
