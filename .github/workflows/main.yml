@@ -25,13 +25,11 @@ jobs:
 
       - name: Run Python Linter
         run: |
-          echo "Python files found:"
           find . -type f -name "*.py" \
-            -not -path "./.git/*" -print
-
-          find . -type f -name "*.py" \
-            -not -path "./.git/*" -print0 |
-            xargs -0 -r flake8
+            -not -path "./.git/*" \
+            -not -path "./node_modules/*" \
+            -print0 |
+            xargs -0 -r flake8 --config .flake8
 
   lint_js:
     name: Lint JavaScript Files
