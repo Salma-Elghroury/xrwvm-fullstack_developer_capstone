@@ -86,3 +86,31 @@ table{
   transform: scale(1.1);
   border: solid lightgray;
 }
+
+.postreview_form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 720px;
+  margin: 5%;
+}
+
+.postreview_form form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.postreview_form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  resize: vertical;
+}
+
+.postreview_form input,
+.postreview_form select {
+  min-width: 260px;
+  max-width: 100%;
+  padding: 6px;
+}

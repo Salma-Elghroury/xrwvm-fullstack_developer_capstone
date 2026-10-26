@@ -10,9 +10,11 @@ from django.http import JsonResponse
 from django.contrib.auth import login, authenticate
 import logging
 import json
+import requests
 from django.views.decorators.csrf import csrf_exempt
 from .populate import initiate
 from .models import CarMake, CarModel
+from .restapis import get_request, analyze_review_sentiments, post_review
 
 
 # Get an instance of a logger
@@ -140,13 +142,24 @@ def get_cars(request):
 # ...
 
 def add_review(request):
-    if(request.user.is_anonymous == False):
-        data = json.loads(request.body)
+    if request.user.is_authenticated:
+        try:
+            data = json.loads(request.body)
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            return JsonResponse({"status":400,"message":"Invalid JSON body"})
+
+        required_fields = {
+            "name", "dealership", "review", "purchase",
+            "purchase_date", "car_make", "car_model", "car_year",
+        }
+        if not isinstance(data, dict) or not required_fields.issubset(data):
+            return JsonResponse({"status":400,"message":"Missing required review details"})
+
         try:
             response = post_review(data)
-            return JsonResponse({"status":200})
-        except:
-            return JsonResponse({"status":401,"message":"Error in posting review"})
+            return JsonResponse({"status":200,"review":response})
+        except requests.RequestException:
+            logger.exception("Unable to submit review to the dealership service")
+            return JsonResponse({"status":502,"message":"Unable to submit review"})
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
-
