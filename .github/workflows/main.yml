@@ -48,7 +48,7 @@ jobs:
 
       - name: Install JSHint
         run: npm install --global jshint
- 
+
       - name: Run JavaScript Linter
         run: |
           if [ ! -d "./server/database" ]; then
@@ -57,6 +57,7 @@ jobs:
           fi
 
           find ./server/database \
-            -type d -name node_modules -prune -o \
+            -path "./server/database/node_modules" -prune -o \
+            -path "./server/database/.git" -prune -o \
             -type f -name "*.js" -print0 |
             xargs -0 -r jshint --config .jshintrc
