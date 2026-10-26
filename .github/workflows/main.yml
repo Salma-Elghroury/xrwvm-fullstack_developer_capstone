@@ -49,16 +49,15 @@ jobs:
 
       - name: Install JSHint
         run: npm install --global jshint
-
+ 
       - name: Run JavaScript Linter
         run: |
           if [ ! -d "./server/database" ]; then
-            echo "ERROR: ./server/database directory not found"
+            echo "ERROR: server/database directory not found"
             exit 1
           fi
 
-          echo "JavaScript files found:"
-          find ./server/database -type f -name "*.js" -print
-
-          find ./server/database -type f -name "*.js" -print0 |
-            xargs -0 -r jshint
+          find ./server/database \
+            -type d -name node_modules -prune -o \
+            -type f -name "*.js" -print0 |
+            xargs -0 -r jshint --config .jshintrc
